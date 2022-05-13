@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Registration = (props) => {
+  //
   const [username, setUsername] = useState({
     value: "",
     valid: true,
@@ -38,46 +39,48 @@ const Registration = (props) => {
     classError: "",
   });
 
+  let state = {
+    username: { ...username },
+    firstName: { ...firstName },
+    lastName: { ...lastName },
+    email: { ...email },
+    password: { ...password },
+    confirmPassword: { ...confirmPassword },
+  };
+
   const handleChange = (e) => {
     const value = e.target.value;
-    let duplicate;
 
     switch (e.target.name) {
       //
       case "username":
-        duplicate = { ...username };
-        duplicate.value = value;
-        setUsername(duplicate);
+        state.username.value = value;
+        setUsername(state.username);
         break;
 
       case "firstName":
-        duplicate = { ...firstName };
-        duplicate.value = value;
-        setFirstName(duplicate);
+        state.firstName.value = value;
+        setFirstName(state.firstName);
         break;
 
       case "lastName":
-        duplicate = { ...lastName };
-        duplicate.value = value;
-        setLastName(duplicate);
+        state.lastName.value = value;
+        setLastName(state.lastName);
         break;
 
       case "email":
-        duplicate = { ...email };
-        duplicate.value = value;
-        setEmail(duplicate);
+        state.email.value = value;
+        setEmail(state.email);
         break;
 
       case "password":
-        duplicate = { ...password };
-        duplicate.value = value;
-        setPassword(duplicate);
+        state.password.value = value;
+        setPassword(state.password);
         break;
 
       default:
-        duplicate = { ...confirmPassword };
-        duplicate.value = value;
-        setConfirmPassword(duplicate);
+        state.confirmPassword.value = value;
+        setConfirmPassword(state.confirmPassword);
     }
   };
 
@@ -122,111 +125,95 @@ const Registration = (props) => {
   const validateSubmit = () => {
     //
     if (!validEmail()) {
-      let duplicate = { ...email };
-      duplicate.errorMessage = "Email mora biti validan.";
-      duplicate.classError = "error";
-      duplicate.valid = false;
-      setEmail(duplicate);
+      state.email.errorMessage = "Email mora biti validan.";
+      state.email.classError = "error";
+      state.email.valid = false;
+      setEmail(state.email);
       if (isBlank(email.value)) {
-        let duplicate = { ...email };
-        duplicate.errorMessage = "Popunite ovo polje";
-        duplicate.classError = "error";
-        duplicate.valid = false;
-        setEmail(duplicate);
+        state.email.errorMessage = "Popunite ovo polje";
+        state.email.classError = "error";
+        state.email.valid = false;
+        setEmail(state.email);
       }
     } else {
-      let duplicate = { ...email };
-      duplicate.errorMessage = "";
-      duplicate.classError = "";
-      duplicate.valid = true;
-      setEmail(duplicate);
+      state.email.errorMessage = "";
+      state.email.classError = "";
+      state.email.valid = true;
+      setEmail(state.email);
     }
     if (!validUsername()) {
-      let duplicate = { ...username };
-      duplicate.errorMessage =
+      state.username.errorMessage =
         "Username mora imati minimum 6 karaktera a maksimum 12";
-      duplicate.classError = "error";
-      duplicate.valid = false;
-      setUsername(duplicate);
+      state.username.classError = "error";
+      state.username.valid = false;
+      setUsername(state.username);
       if (isBlank(username.value)) {
-        let duplicate = { ...username };
-        duplicate.errorMessage = "Popunite ovo polje";
-        duplicate.classError = "error";
-        duplicate.valid = false;
-        setUsername(duplicate);
+        state.username.errorMessage = "Popunite ovo polje";
+        state.username.classError = "error";
+        state.username.valid = false;
+        setUsername(state.username);
       }
     } else {
-      let duplicate = { ...username };
-      duplicate.errorMessage = "";
-      duplicate.classError = "";
-      duplicate.valid = true;
-      setUsername(duplicate);
+      state.username.errorMessage = "";
+      state.username.classError = "";
+      state.username.valid = true;
+      setUsername(state.username);
     }
     if (!validFirstName()) {
-      let duplicate = { ...firstName };
-      duplicate.errorMessage = "Popunite ovo polje";
-      duplicate.classError = "error";
-      duplicate.valid = false;
-      setFirstName(duplicate);
+      state.firstName.errorMessage = "Popunite ovo polje";
+      state.firstName.classError = "error";
+      state.firstName.valid = false;
+      setFirstName(state.firstName);
     } else {
-      let duplicate = { ...firstName };
-      duplicate.errorMessage = "";
-      duplicate.classError = "";
-      duplicate.valid = true;
-      setFirstName(duplicate);
+      state.firstName.errorMessage = "";
+      state.firstName.classError = "";
+      state.firstName.valid = true;
+      setFirstName(state.firstName);
     }
     if (!validLastName()) {
-      let duplicate = { ...lastName };
-      duplicate.errorMessage = "Popunite ovo polje";
-      duplicate.classError = "error";
-      duplicate.valid = false;
-      setLastName(duplicate);
+      state.lastName.errorMessage = "Popunite ovo polje";
+      state.lastName.classError = "error";
+      state.lastName.valid = false;
+      setLastName(state.lastName);
     } else {
-      let duplicate = { ...lastName };
-      duplicate.errorMessage = "";
-      duplicate.classError = "";
-      duplicate.valid = true;
-      setLastName(duplicate);
+      state.lastName.errorMessage = "";
+      state.lastName.classError = "";
+      state.lastName.valid = true;
+      setLastName(state.lastName);
     }
     if (!validPassword()) {
-      let duplicate = { ...password };
-      duplicate.errorMessage = "Password mora biti validan.";
-      duplicate.classError = "error";
-      duplicate.valid = false;
-      setPassword(duplicate);
+      state.password.errorMessage = "Password mora biti validan.";
+      state.password.classError = "error";
+      state.password.valid = false;
+      setPassword(state.password);
       if (isBlank(password.value)) {
-        let duplicate = { ...password };
-        duplicate.errorMessage = "Popunite ovo polje";
-        duplicate.classError = "error";
-        duplicate.valid = false;
-        setPassword(duplicate);
+        state.password.errorMessage = "Popunite ovo polje";
+        state.password.classError = "error";
+        state.password.valid = false;
+        setPassword(state.password);
       }
     } else {
-      let duplicate = { ...confirmPassword };
-      duplicate.errorMessage = "";
-      duplicate.classError = "";
-      duplicate.valid = true;
-      setPassword(duplicate);
+      state.confirmPassword.errorMessage = "";
+      state.confirmPassword.classError = "";
+      state.confirmPassword.valid = true;
+      setPassword(state.confirmPassword);
     }
     if (!validConfirmPassword()) {
-      let duplicate = { ...confirmPassword };
-      duplicate.errorMessage = "Sifre se ne poklapaju";
-      duplicate.classError = "error";
-      duplicate.valid = false;
-      setConfirmPassword(duplicate);
+      state.confirmPassword.errorMessage = "Sifre se ne poklapaju";
+      state.confirmPassword.classError = "error";
+      state.confirmPassword.valid = false;
+      setConfirmPassword(state.confirmPassword);
       if (isBlank(password.value)) {
-        let duplicate = { ...confirmPassword };
-        duplicate.errorMessage = "Popunite ovo polje";
-        duplicate.classError = "error";
-        duplicate.valid = false;
-        setConfirmPassword(duplicate);
+        state.confirmPassword.errorMessage = "Popunite ovo polje";
+        state.confirmPassword.classError = "error";
+        state.confirmPassword.valid = false;
+        setConfirmPassword(state.confirmPassword);
       }
     } else {
-      let duplicate = { ...confirmPassword };
-      duplicate.errorMessage = "";
-      duplicate.classError = "";
-      duplicate.valid = true;
-      setConfirmPassword(duplicate);
+      state.confirmPassword.errorMessage = "";
+      state.confirmPassword.classError = "";
+      state.confirmPassword.valid = true;
+      setConfirmPassword(state.confirmPassword);
     }
   };
 
@@ -245,7 +232,7 @@ const Registration = (props) => {
             type="text"
             name="username"
             value={username.value}
-            placeholder="username"
+            placeholder="Username"
           />
           <div className="ui text-danger">{username.errorMessage}</div>
         </div>
