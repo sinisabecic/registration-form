@@ -112,7 +112,7 @@ const Registration = (props) => {
   };
 
   const validPassword = () => {
-    return !isBlank(password.value);
+    return password.value.length >= 8;
   };
 
   const validConfirmPassword = () => {
@@ -122,10 +122,18 @@ const Registration = (props) => {
     );
   };
 
+  const hasSpecialChars = (str) => {
+    return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/.test(
+      str
+    );
+  };
+
   const validateSubmit = () => {
+    console.log(hasSpecialChars(password.value));
+
     //
     if (!validEmail()) {
-      state.email.errorMessage = "Email mora biti validan.";
+      state.email.errorMessage = "Email nije validan.";
       state.email.classError = "error";
       state.email.valid = false;
       setEmail(state.email);
@@ -182,7 +190,7 @@ const Registration = (props) => {
       setLastName(state.lastName);
     }
     if (!validPassword()) {
-      state.password.errorMessage = "Password mora biti validan.";
+      state.password.errorMessage = "Password mora imati minimum 8 karaktera.";
       state.password.classError = "error";
       state.password.valid = false;
       setPassword(state.password);
@@ -193,9 +201,9 @@ const Registration = (props) => {
         setPassword(state.password);
       }
     } else {
-      state.confirmPassword.errorMessage = "";
-      state.confirmPassword.classError = "";
-      state.confirmPassword.valid = true;
+      state.password.errorMessage = "";
+      state.password.classError = "";
+      state.password.valid = true;
       setPassword(state.confirmPassword);
     }
     if (!validConfirmPassword()) {
@@ -203,13 +211,20 @@ const Registration = (props) => {
       state.confirmPassword.classError = "error";
       state.confirmPassword.valid = false;
       setConfirmPassword(state.confirmPassword);
-      if (isBlank(password.value)) {
+      if (isBlank(confirmPassword.value)) {
         state.confirmPassword.errorMessage = "Popunite ovo polje";
         state.confirmPassword.classError = "error";
         state.confirmPassword.valid = false;
         setConfirmPassword(state.confirmPassword);
       }
     } else {
+      if (!hasSpecialChars(password.value)) {
+        state.password.errorMessage =
+          "Sifra mora sadrzati bar jedno veliko, jedno malo slovo, neki broj i neki od sledecih znakova (!,#,$,%,&,*,@...).";
+        state.password.classError = "error";
+        state.password.valid = false;
+        setPassword(state.password);
+      }
       state.confirmPassword.errorMessage = "";
       state.confirmPassword.classError = "";
       state.confirmPassword.valid = true;
@@ -278,6 +293,7 @@ const Registration = (props) => {
             value={password.value}
             placeholder="Password"
           />
+          <div className="ui text-danger">{password.errorMessage}</div>
         </div>
         <div className={"field " + confirmPassword.classError}>
           <label>Confirm password</label>
