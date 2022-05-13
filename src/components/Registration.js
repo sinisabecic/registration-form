@@ -102,8 +102,10 @@ const Registration = (props) => {
   };
 
   const validEmail = () => {
-    let re = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z\-\.]+)\.([a-zA-Z]{2,5})$/;
-    return re.test(email.value) && !isBlank(email.value);
+    return (
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value) &&
+      !isBlank(email.value)
+    );
   };
 
   const validPassword = () => {
