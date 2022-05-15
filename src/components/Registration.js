@@ -132,7 +132,6 @@ const Registration = () => {
   const validateSubmit = () => {
     // console.log(hasSpecialChars(password.value));
 
-    //
     if (!validEmail()) {
       state.email.errorMessage = "Email nije validan.";
       state.email.classError = "error";
@@ -143,7 +142,9 @@ const Registration = () => {
         state.email.classError = "error";
         state.email.valid = false;
         setEmail(state.email);
+        return false;
       }
+      return false;
     } else {
       state.email.errorMessage = "";
       state.email.classError = "";
@@ -161,7 +162,9 @@ const Registration = () => {
         state.username.classError = "error";
         state.username.valid = false;
         setUsername(state.username);
+        return false;
       }
+      return false;
     } else {
       state.username.errorMessage = "";
       state.username.classError = "";
@@ -173,6 +176,7 @@ const Registration = () => {
       state.firstName.classError = "error";
       state.firstName.valid = false;
       setFirstName(state.firstName);
+      return false;
     } else {
       state.firstName.errorMessage = "";
       state.firstName.classError = "";
@@ -184,6 +188,7 @@ const Registration = () => {
       state.lastName.classError = "error";
       state.lastName.valid = false;
       setLastName(state.lastName);
+      return false;
     } else {
       state.lastName.errorMessage = "";
       state.lastName.classError = "";
@@ -200,7 +205,9 @@ const Registration = () => {
         state.password.classError = "error";
         state.password.valid = false;
         setPassword(state.password);
+        return false;
       }
+      return false;
     } else {
       state.password.errorMessage = "";
       state.password.classError = "";
@@ -217,7 +224,9 @@ const Registration = () => {
         state.confirmPassword.classError = "error";
         state.confirmPassword.valid = false;
         setConfirmPassword(state.confirmPassword);
+        return false;
       }
+      return false;
     } else {
       if (!hasSpecialChars(password.value)) {
         state.password.errorMessage =
@@ -225,11 +234,13 @@ const Registration = () => {
         state.password.classError = "error";
         state.password.valid = false;
         setPassword(state.password);
+        return false;
       }
       state.confirmPassword.errorMessage = "";
       state.confirmPassword.classError = "";
       state.confirmPassword.valid = true;
       setConfirmPassword(state.confirmPassword);
+      return true;
     }
   };
 
@@ -247,14 +258,9 @@ const Registration = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    validateSubmit();
-    addUser({
-      username,
-      firstName,
-      lastName,
-      email,
-      password,
-    });
+    let valid = validateSubmit();
+    if (valid === true)
+      addUser({ username, firstName, lastName, email, password });
   };
 
   return (

@@ -200,6 +200,204 @@
         "classError": ""
       },
       "id": 7
+    },
+    {
+      "username": {
+        "value": "lynivebowy",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "firstName": {
+        "value": "Hiroko",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "lastName": {
+        "value": "Mcgee",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "email": {
+        "value": "sacyxi@mailinator.com",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "password": {
+        "value": "Pa$$w0rd!",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "id": 8
+    },
+    {
+      "username": {
+        "value": "ruceq",
+        "valid": false,
+        "errorMessage": "Popunite ovo polje",
+        "classError": "error"
+      },
+      "firstName": {
+        "value": "Stacey",
+        "valid": false,
+        "errorMessage": "Popunite ovo polje",
+        "classError": "error"
+      },
+      "lastName": {
+        "value": "Warner",
+        "valid": false,
+        "errorMessage": "Popunite ovo polje",
+        "classError": "error"
+      },
+      "email": {
+        "value": "bijidubow@mailinator.com",
+        "valid": false,
+        "errorMessage": "Popunite ovo polje",
+        "classError": "error"
+      },
+      "password": {
+        "value": "Pa$$w0rd!",
+        "valid": false,
+        "errorMessage": "Popunite ovo polje",
+        "classError": "error"
+      },
+      "id": 9
+    },
+    {
+      "username": {
+        "value": "zirati",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "firstName": {
+        "value": "Cathleen",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "lastName": {
+        "value": "Guthrie",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "email": {
+        "value": "rebikokepu@mailinator.com",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "password": {
+        "value": "Pa$$w0rd!",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "id": 10
+    },
+    {
+      "username": {
+        "value": "tep",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "firstName": {
+        "value": "Sydnee",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "lastName": {
+        "value": "Delgado",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "email": {
+        "value": "nyqi@mailinator.com",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "password": {
+        "value": "Pa$$w0rd!",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "id": 11
+    },
+    {
+      "username": {
+        "value": "keqebo",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "firstName": {
+        "value": "Chandler",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "lastName": {
+        "value": "Bowers",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "email": {
+        "value": "wyzu@mailinator.com",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "password": {
+        "value": "Pa$$w0rd!",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "id": 12
+    },
+    {
+      "username": {
+        "value": "zydarw",
+        "valid": false,
+        "errorMessage": "Username mora imati minimum 6 karaktera a maksimum 12",
+        "classError": "error"
+      },
+      "firstName": {
+        "value": "Kato",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "lastName": {
+        "value": "Carr",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "email": {
+        "value": "jefylelixu@mailinator.com",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "password": {
+        "value": "Pa$$w0rd!",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "id": 13
     }
   ]
 }
