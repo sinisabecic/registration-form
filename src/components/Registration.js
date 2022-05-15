@@ -248,7 +248,13 @@ const Registration = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     validateSubmit();
-    addUser({ username, firstName, lastName, email, password });
+    addUser({
+      username,
+      firstName,
+      lastName,
+      email,
+      password,
+    });
   };
 
   return (

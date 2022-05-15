@@ -32,6 +32,174 @@
         "classError": ""
       },
       "id": 1
+    },
+    {
+      "username": {
+        "value": "hiladyb",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "firstName": {
+        "value": "Margaret",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "lastName": {
+        "value": "Long",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "email": {
+        "value": "bidixukif@mailinator.com",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "password": {
+        "value": "Pa$$w0rd!",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "id": 2
+    },
+    {
+      "username": {
+        "value": "vynixi",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "firstName": {
+        "value": "Macaulay",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "lastName": {
+        "value": "Lawrence",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "email": {
+        "value": "qiboguroko@mailinator.com",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "password": {
+        "value": "Pa$$w0rd!",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "username": {
+        "value": "vujehubo",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "firstName": {
+        "value": "Jolene",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "lastName": {
+        "value": "Bray",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "email": {
+        "value": "xopujaboza@mailinator.com",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "password": {
+        "value": "Pa$$w0rd!",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "id": 5
+    },
+    {
+      "username": {
+        "value": "qabep",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "firstName": {
+        "value": "Deborah",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "lastName": {
+        "value": "Ball",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "email": {
+        "value": "kypoc@mailinator.com",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "password": {
+        "value": "Pa$$w0rd!",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "id": 6
+    },
+    {
+      "username": {
+        "value": "qycucusasas",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "firstName": {
+        "value": "Phillip",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "lastName": {
+        "value": "Dominguez",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "email": {
+        "value": "fige@mailinator.com",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "password": {
+        "value": "Pa$$w0rd!",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "id": 7
     }
   ]
 }
