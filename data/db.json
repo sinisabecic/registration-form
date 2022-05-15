@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "username": {
+        "value": "legene",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "firstName": {
+        "value": "Cassidy",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "lastName": {
+        "value": "Bean",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "email": {
+        "value": "lokunovac@mailinator.com",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "password": {
+        "value": "Pa$$w0rd!",
+        "valid": true,
+        "errorMessage": "",
+        "classError": ""
+      },
+      "id": 1
+    }
+  ]
+}

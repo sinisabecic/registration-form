@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import api from "../services/api";
 
-const Registration = (props) => {
+const Registration = () => {
   //
   const [username, setUsername] = useState({
     value: "",
@@ -129,7 +130,7 @@ const Registration = (props) => {
   };
 
   const validateSubmit = () => {
-    console.log(hasSpecialChars(password.value));
+    // console.log(hasSpecialChars(password.value));
 
     //
     if (!validEmail()) {
@@ -232,85 +233,100 @@ const Registration = (props) => {
     }
   };
 
+  const addUser = async (user) => {
+    try {
+      const response = await api.post("/users", user);
+      if (response.status === 201) {
+        console.log("Created: " + response.status);
+        alert("User created successful!");
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
     validateSubmit();
+    addUser({ username, firstName, lastName, email, password });
   };
 
   return (
-    <div className="container">
-      <form className="ui form">
-        <div className={"field " + username.classError}>
-          <label>Username</label>
-          <input
-            onChange={handleChange}
-            type="text"
-            name="username"
-            value={username.value}
-            placeholder="Username"
-          />
-          <div className="ui text-danger">{username.errorMessage}</div>
-        </div>
-        <div className={"field " + firstName.classError}>
-          <label>First Name</label>
-          <input
-            type="text"
-            name="firstName"
-            onChange={handleChange}
-            value={firstName.value}
-            placeholder="First Name"
-          />
-          <div className="ui text-danger">{firstName.errorMessage}</div>
-        </div>
-        <div className={"field " + lastName.classError}>
-          <label>Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            onChange={handleChange}
-            value={lastName.value}
-            placeholder="Last Name"
-          />
-          <div className="ui text-danger">{lastName.errorMessage}</div>
-        </div>
-        <div className={"field " + email.classError}>
-          <label>Email</label>
-          <input
-            type="text"
-            name="email"
-            onChange={handleChange}
-            value={email.value}
-            placeholder="Email"
-          />
-          <div className="ui text-danger">{email.errorMessage}</div>
-        </div>
-        <div className={"field " + password.classError}>
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            onChange={handleChange}
-            value={password.value}
-            placeholder="Password"
-          />
-          <div className="ui text-danger">{password.errorMessage}</div>
-        </div>
-        <div className={"field " + confirmPassword.classError}>
-          <label>Confirm password</label>
-          <input
-            type="password"
-            name="confirmPassword"
-            onChange={handleChange}
-            value={confirmPassword.value}
-            placeholder="Confirm password"
-          />
-          <div className="ui text-danger">{confirmPassword.errorMessage}</div>
-        </div>
-        <button className="ui button" type="submit" onClick={submitHandler}>
-          Submit
-        </button>
-      </form>
-    </div>
+    <>
+      <div className="container">
+        <form className="ui form">
+          <div className={"field " + username.classError}>
+            <label>Username</label>
+            <input
+              onChange={handleChange}
+              type="text"
+              name="username"
+              value={username.value}
+              placeholder="Username"
+            />
+            <div className="ui text-danger">{username.errorMessage}</div>
+          </div>
+          <div className={"field " + firstName.classError}>
+            <label>First Name</label>
+            <input
+              type="text"
+              name="firstName"
+              onChange={handleChange}
+              value={firstName.value}
+              placeholder="First Name"
+            />
+            <div className="ui text-danger">{firstName.errorMessage}</div>
+          </div>
+          <div className={"field " + lastName.classError}>
+            <label>Last Name</label>
+            <input
+              type="text"
+              name="lastName"
+              onChange={handleChange}
+              value={lastName.value}
+              placeholder="Last Name"
+            />
+            <div className="ui text-danger">{lastName.errorMessage}</div>
+          </div>
+          <div className={"field " + email.classError}>
+            <label>Email</label>
+            <input
+              type="text"
+              name="email"
+              onChange={handleChange}
+              value={email.value}
+              placeholder="Email"
+            />
+            <div className="ui text-danger">{email.errorMessage}</div>
+          </div>
+          <div className={"field " + password.classError}>
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              onChange={handleChange}
+              value={password.value}
+              placeholder="Password"
+            />
+            <div className="ui text-danger">{password.errorMessage}</div>
+          </div>
+          <div className={"field " + confirmPassword.classError}>
+            <label>Confirm password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              onChange={handleChange}
+              value={confirmPassword.value}
+              placeholder="Confirm password"
+            />
+            <div className="ui text-danger">{confirmPassword.errorMessage}</div>
+          </div>
+          <button className="ui button" type="submit" onClick={submitHandler}>
+            Submit
+          </button>
+        </form>
+      </div>
+    </>
   );
 };
 
